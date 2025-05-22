@@ -20,7 +20,7 @@ public class Offer {
 
     private String subject;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime lessonDateTime;
 
     private String name;
 

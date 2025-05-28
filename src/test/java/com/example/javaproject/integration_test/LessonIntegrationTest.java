@@ -1,5 +1,6 @@
 package com.example.javaproject.integration_test;
 
+import com.example.javaproject.config.TestSecurityConfig;
 import com.example.javaproject.repository.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -28,6 +30,7 @@ import static org.hamcrest.Matchers.hasSize;
 @AutoConfigureMockMvc
 @Testcontainers
 @SpringBootTest(classes = JavaProjectApplication.class)
+@Import(TestSecurityConfig.class)
 public class LessonIntegrationTest {
 
     @Autowired private MockMvc mockMvc;
